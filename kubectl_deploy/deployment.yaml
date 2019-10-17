@@ -12,12 +12,12 @@ spec:
     spec:
       containers:
         - name: slack-answerbot
-          image: ministryofjustice/cloud-platform-slack-answerbot:1.1
-          # env:
-          #   - name: API_KEY
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: usage-report-api-key
-          #         key: token
+          image: ministryofjustice/cloud-platform-slack-answerbot:1.3
+          env:
+            - name: SLACK_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: slack-api-token
+                  key: token
           ports:
           - containerPort: 4567

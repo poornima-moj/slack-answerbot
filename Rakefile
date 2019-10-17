@@ -1,6 +1,6 @@
-task :environment do
-  ENV['SLACK_API_TOKEN'] = File.read('config/.token').chomp
-end
+# task :environment do
+#   ENV['SLACK_API_TOKEN'] = File.read('config/.token').chomp
+# end
 
 desc 'start a console session in pry'
 task :console => :environment do
@@ -9,7 +9,7 @@ end
 
 namespace :deploy do
   desc 'start wodbot'
-  task :run => :environment do
+  task :run do
     require_relative 'bin/run'
   end
 

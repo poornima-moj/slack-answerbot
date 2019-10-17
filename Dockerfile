@@ -21,10 +21,10 @@ COPY Gemfile Gemfile.lock ./
 
 RUN bundle install
 
-RUN chown -R appuser:appgroup /app
-
 COPY . /app
 
-USER appuser
+RUN chown -R appuser:appgroup /app
+
+USER 1000
 
 CMD ["rake","deploy:run"]
