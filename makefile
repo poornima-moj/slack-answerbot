@@ -1,5 +1,5 @@
 IMAGE := cloud-platform-slack-answerbot
-VERSION := 1.3
+VERSION := 1.4
 ORG := ministryofjustice
 TAGGED := $(ORG)/$(IMAGE):$(VERSION)
 

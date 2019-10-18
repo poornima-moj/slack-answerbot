@@ -7,6 +7,7 @@ module AnswerBot
       # keywords.each do |search|
       #   begin
           # search_link = @@parser.search(keywords)
+          return if (!SlackRubyBot::Config.allow_message_loops?) && (client.self && client.self.id == data.user)
           input = data.text
           keyword_list = {
             ["user guide"] => 
